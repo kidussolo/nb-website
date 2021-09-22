@@ -8,7 +8,9 @@ export const light = {
   primary: {
     main: '#F84025',
     light: 'rgb(71, 145, 219)',
-    dark: 'rgb(17, 82, 147)',
+    // dark: 'rgb(17, 82, 147)',
+    dark: "#f84025",
+
     contrastText: '#fff',
   },
   secondary: {

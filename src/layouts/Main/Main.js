@@ -2,12 +2,66 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import { useMediaQuery, Divider } from "@material-ui/core";
 import { Topbar, Footer, Sidebar } from "./components";
+import {
+  AppBar,
+  Drawer,
+  useMediaQuery,
+  IconButton,
+  Toolbar,
+} from "@material-ui/core";
+import ForumIcon from "@material-ui/icons/Forum";
+import { ContactForm, Section } from "components/organisms";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     height: "100%",
+  },
+  pagePaddingTop: {
+    paddingTop: theme.spacing(3),
+    [theme.breakpoints.up("md")]: {
+      paddingTop: theme.spacing(5),
+    },
+  },
+  appBarBottom: {
+    top: "auto",
+    bottom: 0,
+    background: "transparent",
+    boxShadow: "none",
+  },
+  toolbarBottom: {
+    width: "100%",
+    margin: "0 auto",
+    padding: theme.spacing(0, 2),
+  },
+  pagePaddingTop: {
+    paddingTop: theme.spacing(3),
+    [theme.breakpoints.up("md")]: {
+      paddingTop: theme.spacing(15),
+    },
+  },
+  chatIconButton: {
+    position: "absolute",
+    right: theme.spacing(3),
+    left: "auto",
+    top: theme.spacing(-3),
+    background: theme.palette.primary.main,
+    width: 55,
+    height: 55,
+    boxShadow: `0 2px 10px 0 ${theme.palette.cardShadow}`,
+    "&:hover": {
+      background: theme.palette.primary.main,
+    },
+  },
+  forumIcon: {
+    color: "white",
+    width: 25,
+    height: 25,
+  },
+  contactForm: {
+    padding: theme.spacing(3, 2),
+    maxWidth: 800,
+    margin: "0 auto",
   },
 }));
 
@@ -19,152 +73,30 @@ const Main = ({ children, themeToggler, themeMode }) => {
     defaultMatches: true,
   });
 
-  const pages = {
-    landings: {
-      title: "Landings",
-      id: "landing-pages",
-      children: {
-        services: {
-          groupTitle: "Services",
-          pages: [
-            {
-              title: "Coworking",
-              href: "/coworking",
-            },
-          ],
-        },
-        apps: {
-          groupTitle: "Apps",
-          pages: [
-            {
-              title: "Desktop App",
-              href: "/desktop-app",
-            },
-          ],
-        },
-        web: {
-          groupTitle: "Web",
-          pages: [
-            {
-              title: "Marketing",
-              href: "/",
-            },
-          ],
-        },
-      },
+  const pages = [
+    {
+      title: "Home",
+      href: "/"
     },
-    pages: {
-      title: "Pages",
-      id: "supported-pages",
-      children: {
-        career: {
-          groupTitle: "Career",
-          pages: [
-            {
-              title: "Lising",
-              href: "/career-listing",
-            },
-          ],
-        },
-        helpCenter: {
-          groupTitle: "Help center",
-          pages: [
-            {
-              title: "Overview",
-              href: "/help-center",
-            },
-          ],
-        },
-        company: {
-          groupTitle: "Company",
-          pages: [
-            {
-              title: "About",
-              href: "/about",
-            },
-          ],
-        },
-        contact: {
-          groupTitle: "Contact",
-          pages: [
-            {
-              title: "Reach View",
-              href: "/contact-page",
-            },
-          ],
-        },
-        blog: {
-          groupTitle: "Blog",
-          pages: [
-            {
-              title: "Newsroom",
-              href: "/blog-newsroom",
-            },
-          ],
-        },
-        portfolio: {
-          groupTitle: "Portfolio",
-          pages: [
-            {
-              title: "Basic",
-              href: "/portfolio-page",
-            },
-          ],
-        },
-      },
+    {
+      title: "About Us",
+      href: "/about"
     },
-    account: {
-      title: "Account",
-      id: "account",
-      children: {
-        settings: {
-          groupTitle: "Settings",
-          pages: [
-            {
-              title: "General",
-              href: "/account/?pid=general",
-            },
-          ],
-        },
-        signup: {
-          groupTitle: "Sign up",
-          pages: [
-            {
-              title: "Simple",
-              href: "/signup-simple",
-            },
-          ],
-        },
-        signin: {
-          groupTitle: "Sign in",
-          pages: [
-            {
-              title: "Simple",
-              href: "/signin-simple",
-            },
-          ],
-        },
-        password: {
-          groupTitle: "Password reset",
-          pages: [
-            {
-              title: "Simple",
-              href: "/password-reset-simple",
-            },
-          ],
-        },
-        error: {
-          groupTitle: "Error",
-          pages: [
-            {
-              title: "Simple",
-              href: "/not-found",
-            },
-          ],
-        },
-      },
+    {
+      title: "Services",
+      href: "/services"
     },
-  };
+    {
+      title: "Product",
+      href: "/product"
+    },
+    {
+      title: "Discover",
+      href: "/discover"
+    },
+
+  ]
+
 
   const [openSidebar, setOpenSidebar] = useState(false);
 
@@ -174,6 +106,15 @@ const Main = ({ children, themeToggler, themeMode }) => {
 
   const handleSidebarClose = () => {
     setOpenSidebar(false);
+  };
+  const [openBottombar, setOpenBottombar] = React.useState(false);
+
+  const handleBottombarOpen = () => {
+    setOpenBottombar(true);
+  };
+
+  const handleBottombarClose = () => {
+    setOpenBottombar(false);
   };
 
   const open = isMd ? false : openSidebar;
@@ -197,10 +138,29 @@ const Main = ({ children, themeToggler, themeMode }) => {
         pages={pages}
       />
       <main>
-        <Divider />
+        {/* <Divider /> */}
         {children}
       </main>
-      <Footer pages={pages} />
+      <Footer />
+      <AppBar position="fixed" className={classes.appBarBottom}>
+        <Toolbar disableGutters className={classes.toolbarBottom}>
+          <IconButton
+            className={classes.chatIconButton}
+            onClick={handleBottombarOpen}
+          >
+            <ForumIcon className={classes.forumIcon} />
+          </IconButton>
+          <Drawer
+            anchor="bottom"
+            open={openBottombar}
+            onClose={handleBottombarClose}
+          >
+            <div className={classes.contactForm}>
+              <ContactForm />
+            </div>
+          </Drawer>
+        </Toolbar>
+      </AppBar>
     </div>
   );
 };

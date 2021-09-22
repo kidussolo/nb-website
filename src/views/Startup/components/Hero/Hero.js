@@ -1,18 +1,17 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
-import { Button, colors } from '@material-ui/core';
+import { colors } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import { SectionHeader } from "components/molecules";
+import { HeroBackground } from "components/organisms";
+import PropTypes from "prop-types";
+import React from "react";
 
-import { SectionHeader } from 'components/molecules';
-import { HeroBackground } from 'components/organisms';
-
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   hero: {
     padding: theme.spacing(3, 2, 30, 2),
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up("sm")]: {
       padding: theme.spacing(3, 6, 30, 6),
     },
-    [theme.breakpoints.up('md')]: {
+    [theme.breakpoints.up("md")]: {
       padding: theme.spacing(5, 8, 30, 8),
     },
   },
@@ -21,7 +20,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const Hero = props => {
+const Hero = (props) => {
   const { className, ...rest } = props;
   const classes = useStyles();
 
@@ -36,13 +35,9 @@ const Hero = props => {
         disbaleCoverOpacity
       >
         <SectionHeader
-          title="We craft beautiful websites and digital products."
-          subtitle="We design, develop and launch websites and products for startups, companies and ourselves."
-          ctaGroup={[
-            <Button color="primary" variant="contained" size="large">
-              Contact us
-            </Button>,
-          ]}
+          title="Automation Solutions for
+          Media Professional"
+          subtitle="NewsBrain's solutions will free up your time for interviewing, investigating and writing. We will automatically post breaking news, send editors alerts about important financial and sports events and analyse data for you. "
           fadeUp
           titleVariant="h3"
           titleProps={{

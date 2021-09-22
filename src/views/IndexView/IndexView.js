@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
   pagePaddingTop: {
     paddingTop: theme.spacing(3),
     [theme.breakpoints.up('md')]: {
-      paddingTop: theme.spacing(10),
+      paddingTop: theme.spacing(15),
     },
   },
   chatIconButton: {
@@ -59,7 +59,7 @@ const useStyles = makeStyles((theme) => ({
 
 export const founders = [
   {
-    title: "Co-Founder",
+    title: "Co-Founder and CTO",
     authorPhoto: {
       src:
         "https://assets.maccarianagency.com/the-front/photos/people/kate-segelson.jpg",
@@ -69,7 +69,7 @@ export const founders = [
     authorName: "Dagm Fekadu",
   },
   {
-    title: "Co-Founder",
+    title: "Co-Founder and CEO",
 
     authorPhoto: {
       src:
@@ -103,16 +103,16 @@ export const teams = [
     },
     authorName: "Kidus Solomon",
   },
-  // {
-  //   title: "Web Backend Developer",
-  //   authorPhoto: {
-  //     src:
-  //       "https://assets.maccarianagency.com/the-front/photos/people/alex-johnson.jpg",
-  //     srcSet:
-  //       "https://assets.maccarianagency.com/the-front/photos/people/alex-johnson@2x.jpg 2x",
-  //   },
-  //   authorName: "Alex Johnson",
-  // },
+  {
+    title: "",
+    authorPhoto: {
+      src:
+        "https://assets.maccarianagency.com/the-front/photos/people/alex-johnson.jpg",
+      srcSet:
+        "https://assets.maccarianagency.com/the-front/photos/people/alex-johnson@2x.jpg 2x",
+    },
+    authorName: "",
+  },
   // {
   //   title: "Web Frontend Developer",
   //   authorPhoto: {
@@ -170,9 +170,10 @@ const IndexView = ({ themeMode }) => {
   return (
     <div>
       <Section className={classes.pagePaddingTop}>
-        {/* <Hero />
-         */}
-      <Hero themeMode={themeMode} />
+        {/* <Hero /> */}
+        
+      <Hero themeMode={themeMode} open={handleBottombarOpen}
+            onClose={handleBottombarClose} />
 
       </Section>
       <Services />
@@ -181,8 +182,7 @@ const IndexView = ({ themeMode }) => {
       <Section>
         <Teams data={teams} />
       </Section>
-      <Footer />
-      {/* <AppBar position="fixed" className={classes.appBarBottom}>
+      <AppBar position="fixed" className={classes.appBarBottom}>
         <Toolbar disableGutters className={classes.toolbarBottom}>
           <IconButton
             className={classes.chatIconButton}
@@ -200,7 +200,7 @@ const IndexView = ({ themeMode }) => {
             </div>
           </Drawer>
         </Toolbar>
-      </AppBar> */}
+      </AppBar>
     </div>
   );
 };

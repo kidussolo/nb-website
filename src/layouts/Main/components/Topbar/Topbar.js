@@ -2,16 +2,19 @@ import {
   Button,
   Hidden,
   IconButton,
+  Link,
   List,
   ListItem,
   Toolbar,
+  Typography,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import MenuIcon from "@material-ui/icons/Menu";
 import clsx from "clsx";
-import { DarkModeToggler, Image } from "components/atoms";
+import { Image } from "components/atoms";
 import PropTypes from "prop-types";
 import React from "react";
+import logo1 from "../../../../assets/images/logof.png";
 
 const useStyles = makeStyles((theme) => ({
   flexGrow: {
@@ -81,12 +84,28 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.primary.dark,
   },
   logoContainer: {
-    width: 100,
+    width: 50,
     height: 28,
     [theme.breakpoints.up("md")]: {
-      width: 120,
+      width: 70,
       height: 32,
     },
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  brandContainer: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  outerContainer: {
+    display: "flex",
+    flexDirection: "column",
+    marginTop: 10,
+  },
+  slogan: {
+    color: theme.palette.primary.dark,
   },
   logoImage: {
     width: "100%",
@@ -122,55 +141,76 @@ const Topbar = ({
 
   return (
     <Toolbar disableGutters className={classes.toolbar} {...rest}>
-      <div className={classes.logoContainer}>
-        <a href="/" title="thefront">
-          <Image
-            className={classes.logoImage}
-            src={
-              themeMode === "light"
-                ? "https://assets.maccarianagency.com/the-front/logos/logo.svg"
-                : "https://assets.maccarianagency.com/the-front/logos/logo-negative.svg"
-            }
-            alt="thefront"
-            lazy={false}
-          />
-        </a>
+      <div className={classes.outerContainer}>
+        <div className={classes.brandContainer}>
+          <div className={classes.logoContainer}>
+            <a href="/" title="newsbrain">
+              <Image
+                className={classes.logoImage}
+                // src={
+                //   themeMode === "light"
+                //     ? "https://assets.maccarianagency.com/the-front/logos/logo.svg"
+                //     : "https://assets.maccarianagency.com/the-front/logos/logo-negative.svg"
+                // }
+                src={logo1}
+                alt="Newsbrain"
+                lazy={false}
+              />
+            </a>
+          </div>
+          <a href="/" style={{ textDecoration: "none", color: "black" }}>
+            <Typography variant="h4">News Brain </Typography>
+          </a>
+        </div>
+        <Link href="/" underline="none">
+          <Typography className={classes.slogan} variant="h6">
+            The Brain Behind your news{" "}
+          </Typography>
+        </Link>
       </div>
+
       <div className={classes.flexGrow} />
       <Hidden smDown>
         <List disablePadding className={classes.navigationContainer}>
           <ListItem
             className={clsx(classes.listItem, "menu-item--no-dropdown")}
           >
-            <Button variant="outlined" component="a" href="/">
+            <Button component="a" href="/">
               Home
             </Button>
           </ListItem>
           <ListItem
             className={clsx(classes.listItem, "menu-item--no-dropdown")}
           >
-            <Button variant="outlined" component="a" href="/about">
-              AboutUs
-            </Button>
-          </ListItem>
-          <ListItem
-            className={clsx(classes.listItem, "menu-item--no-dropdown")}
-          >
-            <Button variant="outlined" component="a" href="/service">
+            <Button component="a" href="/service">
               Services
             </Button>
           </ListItem>
           <ListItem
             className={clsx(classes.listItem, "menu-item--no-dropdown")}
           >
-            <Button variant="outlined" component="a" href="/expo">
+            <Button component="a" href="/product">
               Products
+            </Button>
+          </ListItem>
+          <ListItem
+            className={clsx(classes.listItem, "menu-item--no-dropdown")}
+          >
+            <Button component="a" href="/about">
+              AboutUs
+            </Button>
+          </ListItem>
+          <ListItem
+            className={clsx(classes.listItem, "menu-item--no-dropdown")}
+          >
+            <Button component="a" href="/discover">
+              Discover
             </Button>
           </ListItem>
         </List>
       </Hidden>
       <Hidden mdUp>
-        <DarkModeToggler themeMode={themeMode} onClick={() => themeToggler()} />
+        {/* <DarkModeToggler themeMode={themeMode} onClick={() => themeToggler()} /> */}
         <IconButton
           className={classes.iconButton}
           onClick={onSidebarOpen}

@@ -1,68 +1,20 @@
+import tts from "../../../assets/images/product-tts.png"
 export const partners = [
   {
-    name: 'Airbnb',
-    logo: 'https://assets.maccarianagency.com/the-front/logos/airbnb.svg',
+    name: 'Agriexpert',
+    logo: 'https://newsbrain.io/images/agriexpert.png'
   },
   {
-    name: 'Coinbase',
-    logo: 'https://assets.maccarianagency.com/the-front/logos/coinbase.svg',
+    name: 'Agrily',
+    logo: 'https://newsbrain.io/images/agrily.png',
   },
   {
-    name: 'Dribbble',
-    logo: 'https://assets.maccarianagency.com/the-front/logos/dribbble.svg',
+    name: 'Milknews',
+    logo: 'https://newsbrain.io/images/Milknews.jpg',
   },
-  {
-    name: 'Instagram',
-    logo: 'https://assets.maccarianagency.com/the-front/logos/instagram.svg',
-  },
-  {
-    name: 'Netflix',
-    logo: 'https://assets.maccarianagency.com/the-front/logos/netflix.svg',
-  },
-  {
-    name: 'Pinterest',
-    logo: 'https://assets.maccarianagency.com/the-front/logos/pinterest.svg',
-  },
+  
 ];
 
-export const services = [
-  {
-    icon: 'fas fa-laptop-code',
-    title: 'Web Design',
-    description:
-      'We design and develop beautiful, lightning fast, scalable, and marketing-focused websites tailored to grow your business.',
-  },
-  {
-    icon: 'fas fa-mobile-alt',
-    title: 'UI / UX Design',
-    description:
-      'We craft great user centered interfaces for web and mobile apps. We ensure to deliver intuitive and seamless experiences.',
-  },
-  {
-    icon: 'far fa-lightbulb',
-    title: 'Product Design',
-    description:
-      'We help you to carefully improve your digital product to deliver a great user experience, grow its user base and increase retention.',
-  },
-  {
-    icon: 'fas fa-brain',
-    title: 'Branding',
-    description:
-      'We transform businesses into brands through high quality brand identity design.',
-  },
-  {
-    icon: 'fas fa-rocket',
-    title: 'Optimization',
-    description:
-      'We help you optimize your website or mobile app to increase your conversion rates.',
-  },
-  {
-    icon: 'fas fa-cogs',
-    title: 'Automation',
-    description:
-      'We help your business gain leverage and efficiency through smart automation.',
-  },
-];
 
 export const process = [
   {
@@ -93,15 +45,15 @@ export const process = [
 
 export const work = [
   {
-    title: 'Your Brand Platform',
+    title: 'Text To Speech',
     description:
-      'Monetize your website and manage all guest interactions with your own brand, logo and domains.',
-    illustration: 'https://assets.maccarianagency.com/the-front/illustrations/brand-platform.svg',
+      'Convert your article to speech and reach out to a wide range of users',
+    illustration: tts,
   },
   {
-    title: 'Mobile Compatible Platform',
+    title: 'Media Monitoring',
     description:
-      'Introduce your brand-new mobile friendly website to your customers. Seamlessly integrates with WiFi hardware and marketing automation software.',
+      'Free yourself from constantly checking social media Social media monitoring using one convenient dashboard and email, SMS or messenger alerts for trending posts.',
     illustration: 'https://assets.maccarianagency.com/the-front/illustrations/mobiles.svg',
   },
   {
@@ -109,7 +61,7 @@ export const work = [
     title: 'Simple Customer Dashboards',
     description:
       'Give sub-users access to a simplified dashboard with limited permission levels to offer remote management and real-time analytics.',
-    illustration: 'https://assets.maccarianagency.com/the-front/illustrations/dashboard.svg',
+    illustration: 'https://firebasestorage.googleapis.com/v0/b/newsbrain-editor.appspot.com/o/Screen%20Shot%202021-09-19%20at%201.49.46%20PM.png?alt=media&token=af2dbcaa-fd1c-46e2-9448-7b4c33e655c8',
   },
 ];
 

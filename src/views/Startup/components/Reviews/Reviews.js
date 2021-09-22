@@ -37,7 +37,7 @@ const Reviews = props => {
     <div className={className} data-aos="fade-up" {...rest}>
       <SectionHeader
         title="Take a look what our customers say"
-        subtitle="Take a quick glance at some of our past projects. If you would like to see some more great work, get in touch with us to take a look at our private portfolio."
+        subtitle=""
       />
       <div className={clsx('swiper-container', classes.swiperContainer)}>
         <div className="swiper-wrapper">

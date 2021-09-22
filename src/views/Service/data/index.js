@@ -1,10 +1,10 @@
 export const partners = [
   {
-    name: "Airbnb",
+    name: "Milknews",
     logo: "https://assets.maccarianagency.com/the-front/logos/airbnb.svg",
   },
   {
-    name: "Coinbase",
+    name: "Agronews",
     logo: "https://assets.maccarianagency.com/the-front/logos/coinbase.svg",
   },
   {

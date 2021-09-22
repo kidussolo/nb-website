@@ -1,24 +1,24 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import clsx from 'clsx';
-import { makeStyles } from '@material-ui/core/styles';
-import { Grid, Typography } from '@material-ui/core';
-import { Image } from 'components/atoms';
+import { Grid, Typography } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import clsx from "clsx";
+import { Image } from "components/atoms";
+import PropTypes from "prop-types";
+import React from "react";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     background: theme.palette.alternate.main,
-    width: '100%',
+    width: "100%",
   },
   noBg: {
-    background: 'transparent',
+    background: "transparent",
   },
   copy: {
-    textAlign: 'center',
+    textAlign: "center",
     maxWidth: 700,
-    margin: '0 auto',
+    margin: "0 auto",
     padding: theme.spacing(2, 2),
-    [theme.breakpoints.up('md')]: {
+    [theme.breakpoints.up("md")]: {
       padding: theme.spacing(4, 2),
     },
   },
@@ -33,7 +33,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const Partners = props => {
+const Partners = (props) => {
   const { data, className, ...rest } = props;
   const classes = useStyles();
 
@@ -48,7 +48,7 @@ const Partners = props => {
               align="center"
               className={classes.fontWeight700}
             >
-              Our work has been featured in:
+              This folks get it:
             </Typography>
           </Grid>
           <Grid item xs={12}>

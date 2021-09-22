@@ -46,7 +46,7 @@ const Advantages = (props) => {
         title={
           <span>
             Services we{" "}
-            <Typography color="secondary" variant="inherit" component="span">
+            <Typography color="primary" variant="inherit" component="span">
               Provide
             </Typography>
           </span>

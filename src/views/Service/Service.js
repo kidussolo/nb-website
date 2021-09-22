@@ -72,10 +72,10 @@ const Service = () => {
     <div className={classes.root}>
       <Section className={classes.pagePaddingTop}>
         <>
-          <About data={partners} />
-          <Section>
-            <Divider />
-          </Section>
+          {/* <About data={partners} /> */}
+          {/* <Section> */}
+            {/* <Divider /> */}
+          {/* </Section> */}
           <Advantages data={advantages} />
         </>
       </Section>

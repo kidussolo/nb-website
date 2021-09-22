@@ -1,4 +1,4 @@
-import { Grid, Typography, useMediaQuery } from "@material-ui/core";
+import { Grid, Typography, useMediaQuery, Button } from "@material-ui/core";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import { ToggleButton, ToggleButtonGroup } from "@material-ui/lab";
 import clsx from "clsx";
@@ -86,7 +86,7 @@ const Main = (props) => {
           <>
             <SectionHeader
               title="Pricing"
-              subtitle="We are founded by a leading academic and researcher in the field of Industrial Systems Engineering. "
+              subtitle="Become a testing client "
               titleProps={{
                 className: clsx(classes.textWhite, classes.fontWeightBold),
                 variant: "h2",
@@ -96,7 +96,7 @@ const Main = (props) => {
               }}
               data-aos="fade-up"
             />
-            <div className={classes.toggleContainer} data-aos="fade-up">
+            {/* <div className={classes.toggleContainer} data-aos="fade-up">
               <ToggleButtonGroup
                 value={pricingOption}
                 exclusive
@@ -148,7 +148,7 @@ const Main = (props) => {
                   </Typography>
                 </ToggleButton>
               </ToggleButtonGroup>
-            </div>
+            </div> */}
           </>
         </Section>
       </div>
@@ -179,16 +179,16 @@ const Main = (props) => {
                         fontIconColor={theme.palette.primary.main}
                       />
                     }
-                    // cta={
-                    //   <Button
-                    //     color="primary"
-                    //     variant={item.isHighlighted ? "contained" : "outlined"}
-                    //     fullWidth
-                    //     size="large"
-                    //   >
-                    //     Subscribe now
-                    //   </Button>
-                    // }
+                    cta={
+                      <Button
+                        color="primary"
+                        variant={item.isHighlighted ? "contained" : "outlined"}
+                        fullWidth
+                        size="large"
+                      >
+                        Subscribe now
+                      </Button>
+                    }
                     disclaimer={item.disclaimer}
                     className={classes.cardPricing}
                   />

@@ -28,8 +28,8 @@ const Work = props => {
   return (
     <div className={className} data-aos="fade-up" {...rest}>
       <SectionHeader
-        title="Our Work"
-        subtitle="Take a quick glance at some of our past projects. If you would like to see some more great work, get in touch with us to take a look at our private portfolio."
+        title="Our Products"
+        subtitle="Take a quick glance at some of our products. "
       />
       <Grid container justify="center">
         {data.map((item, index) => (
@@ -48,7 +48,9 @@ const Work = props => {
                 titleVariant="h5"
                 title={item.title}
                 subtitle={item.description}
-                ctaGroup={[<LearnMoreLink title="Learn more" variant="h6" />]}
+                ctaGroup={[ <Button color="primary" variant="contained" size="large">
+                Contact us
+              </Button>,]}
                 align="left"
                 disableGutter
               />
@@ -58,11 +60,6 @@ const Work = props => {
             </Grid>
           </Grid>
         ))}
-        <Grid item container justify="center" xs={12}>
-          <Button variant="contained" color="primary">
-            Contact us
-          </Button>
-        </Grid>
       </Grid>
     </div>
   );

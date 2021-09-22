@@ -71,7 +71,7 @@ const Services = ({ className, ...rest }) => {
 
   const benefitsHeader = (
     <Typography variant="h4" component="span" className={classes.fontWeight900}>
-      With NewsBrain, you get:
+      With NewsBrain, you get
     </Typography>
   );
 

@@ -6,6 +6,8 @@ import { Grid, Typography, Button } from "@material-ui/core";
 import { Image } from "components/atoms";
 import { SectionHeader } from "components/molecules";
 
+import dashBoard from "../../../../assets/images/dashboard.png"
+
 const useStyles = makeStyles((theme) => ({
   promoLogo: {
     maxWidth: 100,
@@ -42,15 +44,15 @@ const About = (props) => {
                   </span>
                 }
                 subtitle="Some of our services"
-                ctaGroup={[
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    size={isMd ? "large" : "medium"}
-                  >
-                    Get Started
-                  </Button>,
-                ]}
+                // ctaGroup={[
+                //   <Button
+                //     variant="contained"
+                //     color="primary"
+                //     size={isMd ? "large" : "medium"}
+                //   >
+                //     Get Started
+                //   </Button>,
+                // ]}
                 align={isMd ? "left" : "center"}
                 disableGutter
               />
@@ -62,7 +64,7 @@ const About = (props) => {
                 align={isMd ? "left" : "center"}
                 gutterBottom
               >
-                TRUSTED BY:
+                This Folks get it:
               </Typography>
               <Grid container justify="space-between">
                 {data.map((partner, index) => (
@@ -95,7 +97,8 @@ const About = (props) => {
           data-aos={"fade-up"}
         >
           <Image
-            src="https://assets.maccarianagency.com/the-front/illustrations/dashboard-extended.svg"
+            // src="https://assets.maccarianagency.com/the-front/illustrations/dashboard-extended.svg"
+            src={dashBoard}
             alt="Dashboard"
           />
         </Grid>

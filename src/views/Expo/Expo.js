@@ -1,9 +1,9 @@
 import { colors } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import { Section, SectionAlternate } from "components/organisms";
+import { Section } from "components/organisms";
 import React from "react";
-import { About, Contact, Description, PromoNumbers } from "./components";
-import { promoNumbers, teasers } from "./data";
+import { Process } from "./components";
+import { process } from "./data";
 
 const useStyles = makeStyles((theme) => ({
   sectionDescription: {
@@ -15,25 +15,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Expo = () => {
-  const classes = useStyles();
-
+const Discover = () => {
   return (
     <div>
-      <SectionAlternate className={classes.sectionDescription}>
-        <Description />
-      </SectionAlternate>
       <Section>
-        <PromoNumbers data={promoNumbers} />
+        <Process data={process} />
       </Section>
-      <About data={teasers} />
-      <div className={classes.sectionAlternateForm}>
-        <Section narrow>
-          <Contact />
-        </Section>
-      </div>
     </div>
   );
 };
 
-export default Expo;
+export default Discover;

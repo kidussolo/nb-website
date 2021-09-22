@@ -1,18 +1,17 @@
-import React from 'react';
-import clsx from 'clsx';
-import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
-import { Drawer } from '@material-ui/core';
+import { Drawer } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import clsx from "clsx";
+import PropTypes from "prop-types";
+import React from "react";
+import { SidebarNav } from "./components";
 
-import { SidebarNav } from './components';
-
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   drawer: {
-    width: '100%',
+    width: "100%",
     maxWidth: 325,
   },
   root: {
-    height: '100%',
+    height: "100%",
     padding: theme.spacing(1),
   },
   nav: {
@@ -20,7 +19,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const Sidebar = props => {
+const Sidebar = (props) => {
   const { pages, open, variant, onClose, className, ...rest } = props;
 
   const classes = useStyles();
