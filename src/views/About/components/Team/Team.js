@@ -68,7 +68,7 @@ const Team = (props) => {
   return (
     <div className={className} {...rest}>
       <SectionHeader title="Meet our team" />
-      <Grid container spacing={isMd ? 2 : 1}>
+      <Grid container spacing={isMd ? 2 : 1} style={{justifyContent: "center"}}>
         {data.map((item, index) => (
           <Grid item xs={6} sm={6} md={4} key={index} data-aos="fade-up">
             <CardBase className={classes.cardBase} liftUp>

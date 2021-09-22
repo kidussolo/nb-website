@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import {} from '@material-ui/core';
 import { useMediaQuery, Grid, Button } from '@material-ui/core';
-import { Image, LearnMoreLink } from 'components/atoms';
+import { Image } from 'components/atoms';
 import { SectionHeader } from 'components/molecules';
 
 const useStyles = makeStyles(theme => ({

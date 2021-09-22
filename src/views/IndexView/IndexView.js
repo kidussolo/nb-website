@@ -7,6 +7,7 @@ import { Teams } from "views/About/components";
 import Pricing from "views/Pricing";
 import { Founders } from "views/Service/components";
 import { Hero, Services } from "./components";
+import noUser from "../../assets/images/no-profile-picture.svg";
 
 const useStyles = makeStyles((theme) => ({
   pagePaddingTop: {
@@ -25,12 +26,6 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     margin: "0 auto",
     padding: theme.spacing(0, 2),
-  },
-  pagePaddingTop: {
-    paddingTop: theme.spacing(3),
-    [theme.breakpoints.up('md')]: {
-      paddingTop: theme.spacing(15),
-    },
   },
   chatIconButton: {
     position: "absolute",
@@ -93,14 +88,13 @@ export const teams = [
     authorName: "Kidus Solomon",
   },
   {
-    title: "",
+    title: "Can claim this spot",
     authorPhoto: {
-      src:
-        "https://assets.maccarianagency.com/the-front/photos/people/alex-johnson.jpg",
+      src: { noUser },
       srcSet:
         "https://assets.maccarianagency.com/the-front/photos/people/alex-johnson@2x.jpg 2x",
     },
-    authorName: "",
+    authorName: "You",
   },
 ];
 
@@ -119,11 +113,10 @@ const IndexView = ({ themeMode }) => {
   return (
     <div>
       <Section className={classes.pagePaddingTop}>
-      <Hero themeMode={themeMode} open={handleBottombarOpen}
-            onClose={handleBottombarClose} />
+        <Hero themeMode={themeMode} open={handleBottombarOpen} />
       </Section>
       <Services />
-      <Pricing />
+      <Pricing open={handleBottombarOpen} />
       <Founders data={founders} />
       <Section>
         <Teams data={teams} />

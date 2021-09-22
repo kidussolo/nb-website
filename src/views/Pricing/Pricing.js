@@ -2,9 +2,9 @@ import React from "react";
 import { Main } from "./components";
 import { pricings } from "./data";
 
-const Pricing = () => (
+const Pricing = ({ open }) => (
   <div>
-    <Main data={pricings} />
+    <Main data={pricings} open={open} />
   </div>
 );
 

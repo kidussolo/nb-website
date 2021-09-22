@@ -1,6 +1,6 @@
 export const pricings = [
   {
-    title: "Free Trial",
+    title: "For Testing",
     subtitle: "Test our newest features, like basic auto-posting and social media monitoring.",
     monthly: "Free",
     annual: "Free",
@@ -15,8 +15,8 @@ export const pricings = [
   {
     title: "Content Automation",
     subtitle: "News posting, social media monitoring, and financial and sports news alerts.",
-    monthly: 79,
-    annual: 780,
+    monthly: "Varies",
+    annual: "Varies",
     priceSuffix: " / MO",
     features: [
       "News posting",
@@ -30,8 +30,8 @@ export const pricings = [
   {
     title: "Tailored solutions",
     subtitle: "Custom solutions that solve your unique problems, delivered by our in-house IT team.",
-    monthly: 69,
-    annual: 680,
+    monthly: "Varies",
+    annual: "Varies",
     priceSuffix: " / MO",
     features: [
       "Solve unique problems",

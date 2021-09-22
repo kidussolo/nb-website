@@ -35,7 +35,7 @@ const Contact = props => {
               subtitle="Let's Talk"
               subtitleProps={{
                 variant: 'body1',
-                color: 'textPrimary',
+                color: 'textPriredmary',
               }}
               data-aos="fade-up"
               align="left"
@@ -54,7 +54,7 @@ const Contact = props => {
                   secondary="+972 53 332 46 92"
                   primaryTypographyProps={{
                     variant: 'subtitle1',
-                    color: 'textSecondary',
+                    color: 'red',
                   }}
                   secondaryTypographyProps={{
                     variant: 'subtitle1',
@@ -97,11 +97,11 @@ const Contact = props => {
                   "
                   primaryTypographyProps={{
                     variant: 'subtitle1',
-                    color: 'textSecondary',
+                    color: 'red',
                   }}
                   secondaryTypographyProps={{
                     variant: 'subtitle1',
-                    color: 'textPrimary',
+                    color: 'red',
                   }}
                 />
               </ListItem>

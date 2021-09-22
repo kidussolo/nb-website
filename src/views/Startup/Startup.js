@@ -1,21 +1,14 @@
-import { Divider, AppBar, Toolbar, IconButton, Drawer, useMediaQuery } from "@material-ui/core";
-import { useTheme, makeStyles } from "@material-ui/core/styles";
-import { Section } from "components/organisms";
+import { AppBar, Divider, Drawer, IconButton, Toolbar } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import ForumIcon from "@material-ui/icons/Forum";
+import { ContactForm, Section } from "components/organisms";
 import React from "react";
 import { Hero, Partners, Reviews, Work } from "./components";
 import { partners, reviews, work } from "./data";
-import ForumIcon from "@material-ui/icons/Forum";
-import { ContactForm } from "components/organisms";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     height: "100%",
-  },
-  pagePaddingTop: {
-    paddingTop: theme.spacing(3),
-    [theme.breakpoints.up("md")]: {
-      paddingTop: theme.spacing(5),
-    },
   },
   appBarBottom: {
     top: "auto",
@@ -61,7 +54,6 @@ const useStyles = makeStyles((theme) => ({
 
 const Startup = () => {
   const classes = useStyles()
-  const theme = useTheme();
   
   const [openBottombar, setOpenBottombar] = React.useState(false)
   const handleBottombarOpen = () => {

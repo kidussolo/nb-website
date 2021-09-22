@@ -61,7 +61,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Footer = (props) => {
-  const { pages, open, onClose, className, ...rest } = props;
+  const { open } = props;
 
   const classes = useStyles();
 
@@ -144,7 +144,7 @@ const Footer = (props) => {
   const BottomNav = () => {
     return (
       <div className={classes.bottomNav}>
-        <Button style={{ color: "white" }} onClick={()=>open()}>
+        <Button style={{ color: "white" }} onClick={() => open()}>
           Contact Us
         </Button>
         <Button style={{ color: "white" }} onClick={handleBottombarOpen}>

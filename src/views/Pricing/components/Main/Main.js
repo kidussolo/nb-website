@@ -64,7 +64,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Main = (props) => {
-  const { data, className, ...rest } = props;
+  const { data, open, className, ...rest } = props;
   const classes = useStyles();
 
   const theme = useTheme();
@@ -72,11 +72,7 @@ const Main = (props) => {
     defaultMatches: true,
   });
 
-  const [pricingOption, setPricingOption] = React.useState("annual");
-
-  const handleClick = (event, newPricingOption) => {
-    setPricingOption(newPricingOption);
-  };
+  const [pricingOption] = React.useState("annual");
 
   return (
     <div className={className} {...rest}>
@@ -112,7 +108,6 @@ const Main = (props) => {
                     subtitle={item.subtitle}
                     priceComponent={
                       <Typography variant="h3" color="textPrimary">
-                        $
                         {pricingOption === "annual"
                           ? item.annual
                           : item.monthly}
@@ -130,13 +125,12 @@ const Main = (props) => {
                         color="primary"
                         variant={item.isHighlighted ? "contained" : "outlined"}
                         fullWidth
+                        onClick={open}
                         size="large"
                       >
-                        Subscribe now
+                        Contact Us
                       </Button>
                     }
-                    disclaimer={item.disclaimer}
-                    className={classes.cardPricing}
                   />
                 </Grid>
               ))}

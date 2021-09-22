@@ -5,6 +5,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Image } from "components/atoms";
 import { SectionHeader } from "components/molecules";
 import { Section } from "components/organisms";
+// import aboutUs from "../../../../assets/images/about-us.jpg"
 
 const useStyles = makeStyles((theme) => ({
   root: {

@@ -5,8 +5,7 @@ import {
   Divider,
   List,
   ListItem,
-  ListItemIcon,
-  Typography,
+  ListItemIcon
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import CloseIcon from "@material-ui/icons/Close";

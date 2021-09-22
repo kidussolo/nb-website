@@ -96,7 +96,7 @@ const useStyles = makeStyles((theme) => ({
   },
   brandContainer: {
     display: "flex",
-    justifyContent: "center",
+    justifyContent: "left",
     alignItems: "center",
   },
   outerContainer: {
@@ -147,11 +147,6 @@ const Topbar = ({
             <a href="/" title="newsbrain">
               <Image
                 className={classes.logoImage}
-                // src={
-                //   themeMode === "light"
-                //     ? "https://assets.maccarianagency.com/the-front/logos/logo.svg"
-                //     : "https://assets.maccarianagency.com/the-front/logos/logo-negative.svg"
-                // }
                 src={logo1}
                 alt="Newsbrain"
                 lazy={false}

@@ -3,14 +3,14 @@ import {
   Divider,
   Drawer,
   IconButton,
-  Toolbar,
+  Toolbar
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import ForumIcon from "@material-ui/icons/Forum";
 import { ContactForm, Section } from "components/organisms";
 import React from "react";
-import { About, Advantages } from "./components";
-import { advantages, partners } from "./data";
+import { Advantages } from "./components";
+import { advantages } from "./data";
 
 const useStyles = makeStyles((theme) => ({
   pagePaddingTop: {
@@ -72,10 +72,6 @@ const Service = () => {
     <div className={classes.root}>
       <Section className={classes.pagePaddingTop}>
         <>
-          {/* <About data={partners} /> */}
-          {/* <Section> */}
-            {/* <Divider /> */}
-          {/* </Section> */}
           <Advantages data={advantages} />
         </>
       </Section>

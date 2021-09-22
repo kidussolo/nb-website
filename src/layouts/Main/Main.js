@@ -1,17 +1,15 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
-import clsx from "clsx";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
-import { Topbar, Footer, Sidebar } from "./components";
 import {
   AppBar,
-  Drawer,
-  useMediaQuery,
-  IconButton,
-  Toolbar,
+  Drawer, IconButton,
+  Toolbar, useMediaQuery
 } from "@material-ui/core";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
 import ForumIcon from "@material-ui/icons/Forum";
-import { ContactForm, Section } from "components/organisms";
+import clsx from "clsx";
+import { ContactForm } from "components/organisms";
+import PropTypes from "prop-types";
+import React, { useState } from "react";
+import { Footer, Sidebar, Topbar } from "./components";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -33,12 +31,6 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     margin: "0 auto",
     padding: theme.spacing(0, 2),
-  },
-  pagePaddingTop: {
-    paddingTop: theme.spacing(3),
-    [theme.breakpoints.up("md")]: {
-      paddingTop: theme.spacing(15),
-    },
   },
   chatIconButton: {
     position: "absolute",
