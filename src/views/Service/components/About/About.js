@@ -1,12 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
+import { Grid, Typography, useMediaQuery } from "@material-ui/core";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import { useMediaQuery } from "@material-ui/core";
-import { Grid, Typography, Button } from "@material-ui/core";
 import { Image } from "components/atoms";
 import { SectionHeader } from "components/molecules";
-
-import dashBoard from "../../../../assets/images/dashboard.png"
+import PropTypes from "prop-types";
+import React from "react";
+import dashBoard from "../../../../assets/images/dashboard.png";
 
 const useStyles = makeStyles((theme) => ({
   promoLogo: {

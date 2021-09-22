@@ -95,59 +95,6 @@ const Main = (props) => {
               }}
               data-aos="fade-up"
             />
-            {/* <div className={classes.toggleContainer} data-aos="fade-up">
-              <ToggleButtonGroup
-                value={pricingOption}
-                exclusive
-                onChange={handleClick}
-                className={classes.toggleButtonGroup}
-              >
-                <ToggleButton
-                  value="annual"
-                  className={clsx(
-                    classes.toggleButton,
-                    pricingOption === "annual" ? classes.toggleButtonActive : {}
-                  )}
-                >
-                  <Typography
-                    variant="subtitle1"
-                    className={clsx(
-                      classes.fontWeightBold,
-                      classes.textWhite,
-                      classes.toggleTitle,
-                      pricingOption === "annual"
-                        ? classes.toggleTitleActive
-                        : {}
-                    )}
-                  >
-                    Annual
-                  </Typography>
-                </ToggleButton>
-                <ToggleButton
-                  value="monthly"
-                  className={clsx(
-                    classes.toggleButton,
-                    pricingOption === "monthly"
-                      ? classes.toggleButtonActive
-                      : {}
-                  )}
-                >
-                  <Typography
-                    variant="subtitle1"
-                    className={clsx(
-                      classes.fontWeightBold,
-                      classes.textWhite,
-                      classes.toggleTitle,
-                      pricingOption === "monthly"
-                        ? classes.toggleTitleActive
-                        : {}
-                    )}
-                  >
-                    Monthly
-                  </Typography>
-                </ToggleButton>
-              </ToggleButtonGroup>
-            </div> */}
           </>
         </Section>
       </div>

@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Work = props => {
-  const { data, className, ...rest } = props;
+  const { data, open, onClose, className, ...rest } = props;
   const classes = useStyles();
 
   const theme = useTheme();
@@ -48,7 +48,7 @@ const Work = props => {
                 titleVariant="h5"
                 title={item.title}
                 subtitle={item.description}
-                ctaGroup={[ <Button color="primary" variant="contained" size="large">
+                ctaGroup={[ <Button color="primary" variant="contained" size="large" onClick={() => open()}>
                 Contact us
               </Button>,]}
                 align="left"
