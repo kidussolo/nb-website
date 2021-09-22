@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Grid, Button, colors, Typography } from '@material-ui/core';
-import { SectionHeader, IconAlternate } from 'components/molecules';
-import { CardBase, DescriptionListIcon } from 'components/organisms';
+import { colors, Grid, Typography } from "@material-ui/core";
+import { IconAlternate, SectionHeader } from "components/molecules";
+import { CardBase, DescriptionListIcon } from "components/organisms";
+import PropTypes from "prop-types";
+import React from "react";
 
-const Process = props => {
+const Process = (props) => {
   const { data, className, ...rest } = props;
 
   return (
@@ -12,12 +12,10 @@ const Process = props => {
       <SectionHeader
         title="Curious How it works ?"
         subtitle="Let's show you how"
-        
         ctaGroup={[
-          // <Button color="primary" variant="contained" size="large">
-          //   Contact us
-          // </Button>,
-          <Typography variant="h2" color="primary">Autoposting</Typography>
+          <Typography variant="h2" color="primary">
+            Autoposting
+          </Typography>,
         ]}
         fadeUp
       />
@@ -48,11 +46,6 @@ const Process = props => {
             </CardBase>
           </Grid>
         ))}
-        {/* <Grid item container xs={12} justify="center">
-          <Button variant="contained" size="large" color="primary">
-            Contact us
-          </Button>
-        </Grid> */}
       </Grid>
     </div>
   );

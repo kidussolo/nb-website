@@ -43,16 +43,7 @@ const About = (props) => {
                     for Modern Newsrooms
                   </span>
                 }
-                subtitle="Some of our services"
-                // ctaGroup={[
-                //   <Button
-                //     variant="contained"
-                //     color="primary"
-                //     size={isMd ? "large" : "medium"}
-                //   >
-                //     Get Started
-                //   </Button>,
-                // ]}
+                subtitle=""
                 align={isMd ? "left" : "center"}
                 disableGutter
               />
@@ -64,7 +55,7 @@ const About = (props) => {
                 align={isMd ? "left" : "center"}
                 gutterBottom
               >
-                This Folks get it:
+                This Folks get it
               </Typography>
               <Grid container justify="space-between">
                 {data.map((partner, index) => (

@@ -74,7 +74,7 @@ const Routes = () => {
 
       <Route
         exact
-        path="/not-found-cover"
+        path="/not-found"
         render={(matchProps) => (
           <WithLayout
             {...matchProps}
@@ -83,7 +83,7 @@ const Routes = () => {
           />
         )}
       />
-      <Redirect to="/not-found-cover" />
+      <Redirect to="/not-found" />
     </Switch>
   );
 };

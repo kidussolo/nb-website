@@ -138,10 +138,10 @@ const Main = ({ children, themeToggler, themeMode }) => {
         pages={pages}
       />
       <main>
-        {/* <Divider /> */}
         {children}
       </main>
-      <Footer />
+      <Footer open={handleBottombarOpen}
+            onClose={handleBottombarClose}/>
       <AppBar position="fixed" className={classes.appBarBottom}>
         <Toolbar disableGutters className={classes.toolbarBottom}>
           <IconButton

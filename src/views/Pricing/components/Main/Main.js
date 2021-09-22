@@ -1,6 +1,5 @@
-import { Grid, Typography, useMediaQuery, Button } from "@material-ui/core";
+import { Button, Grid, Typography, useMediaQuery } from "@material-ui/core";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import { ToggleButton, ToggleButtonGroup } from "@material-ui/lab";
 import clsx from "clsx";
 import { Icon } from "components/atoms";
 import { SectionHeader } from "components/molecules";

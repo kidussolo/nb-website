@@ -6,7 +6,7 @@ import React from "react";
 import { Teams } from "views/About/components";
 import Pricing from "views/Pricing";
 import { Founders } from "views/Service/components";
-import { Hero, Services, Footer } from "./components";
+import { Hero, Services } from "./components";
 
 const useStyles = makeStyles((theme) => ({
   pagePaddingTop: {
@@ -79,17 +79,6 @@ export const founders = [
     },
     authorName: "Ilya Dachekovisy",
   },
-  // {
-  //   title: "Co-Founder",
-
-  //   authorPhoto: {
-  //     src:
-  //       "https://assets.maccarianagency.com/the-front/photos/people/alex-johnson.jpg",
-  //     srcSet:
-  //       "https://assets.maccarianagency.com/the-front/photos/people/alex-johnson@2x.jpg 2x",
-  //   },
-  //   authorName: "Person Name",
-  // },
 ];
 
 export const teams = [
@@ -113,46 +102,6 @@ export const teams = [
     },
     authorName: "",
   },
-  // {
-  //   title: "Web Frontend Developer",
-  //   authorPhoto: {
-  //     src:
-  //       "https://assets.maccarianagency.com/the-front/photos/people/valeria-kogan.jpg",
-  //     srcSet:
-  //       "https://assets.maccarianagency.com/the-front/photos/people/valeria-kogan@2x.jpg 2x",
-  //   },
-  //   authorName: "Valeria Kogan",
-  // },
-  // {
-  //   title: "CEO / Co-Founder",
-  //   authorPhoto: {
-  //     src:
-  //       "https://assets.maccarianagency.com/the-front/photos/people/akachi-luccini.jpg",
-  //     srcSet:
-  //       "https://assets.maccarianagency.com/the-front/photos/people/akachi-luccini@2x.jpg 2x",
-  //   },
-  //   authorName: "Akachi Luccini",
-  // },
-  // {
-  //   title: "CTO / Co-Founder",
-  //   authorPhoto: {
-  //     src:
-  //       "https://assets.maccarianagency.com/the-front/photos/people/jack-smith.jpg",
-  //     srcSet:
-  //       "https://assets.maccarianagency.com/the-front/photos/people/jack-smith@2x.jpg 2x",
-  //   },
-  //   authorName: "Jack Smith",
-  // },
-  // {
-  //   title: "Consultant",
-  //   authorPhoto: {
-  //     src:
-  //       "https://assets.maccarianagency.com/the-front/photos/people/veronica-adams.jpg",
-  //     srcSet:
-  //       "https://assets.maccarianagency.com/the-front/photos/people/veronica-adams@2x.jpg 2x",
-  //   },
-  //   authorName: "Veronica Adams",
-  // },
 ];
 
 const IndexView = ({ themeMode }) => {
@@ -170,11 +119,8 @@ const IndexView = ({ themeMode }) => {
   return (
     <div>
       <Section className={classes.pagePaddingTop}>
-        {/* <Hero /> */}
-        
       <Hero themeMode={themeMode} open={handleBottombarOpen}
             onClose={handleBottombarClose} />
-
       </Section>
       <Services />
       <Pricing />
