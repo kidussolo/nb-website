@@ -1,13 +1,12 @@
-import { AppBar, Drawer, IconButton, Toolbar } from "@material-ui/core";
+import { AppBar, Drawer, Toolbar } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import ForumIcon from "@material-ui/icons/Forum";
 import { ContactForm, Section } from "components/organisms";
 import React from "react";
 import { Teams } from "views/About/components";
 import Pricing from "views/Pricing";
 import { Founders } from "views/Service/components";
-import { Hero, Services } from "./components";
 import noUser from "../../assets/images/no-profile-picture.svg";
+import { Hero, Services } from "./components";
 
 const useStyles = makeStyles((theme) => ({
   pagePaddingTop: {
@@ -123,12 +122,6 @@ const IndexView = ({ themeMode }) => {
       </Section>
       <AppBar position="fixed" className={classes.appBarBottom}>
         <Toolbar disableGutters className={classes.toolbarBottom}>
-          <IconButton
-            className={classes.chatIconButton}
-            onClick={handleBottombarOpen}
-          >
-            <ForumIcon className={classes.forumIcon} />
-          </IconButton>
           <Drawer
             anchor="bottom"
             open={openBottombar}

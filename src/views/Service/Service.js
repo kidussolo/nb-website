@@ -1,12 +1,9 @@
 import {
   AppBar,
   Divider,
-  Drawer,
-  IconButton,
-  Toolbar
+  Drawer, Toolbar
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import ForumIcon from "@material-ui/icons/Forum";
 import { ContactForm, Section } from "components/organisms";
 import React from "react";
 import { Advantages } from "./components";
@@ -60,9 +57,7 @@ const Service = () => {
 
   const [openBottombar, setOpenBottombar] = React.useState(false);
 
-  const handleBottombarOpen = () => {
-    setOpenBottombar(true);
-  };
+  
 
   const handleBottombarClose = () => {
     setOpenBottombar(false);
@@ -78,12 +73,6 @@ const Service = () => {
       <Divider />
       <AppBar position="fixed" className={classes.appBarBottom}>
         <Toolbar disableGutters className={classes.toolbarBottom}>
-          <IconButton
-            className={classes.chatIconButton}
-            onClick={handleBottombarOpen}
-          >
-            <ForumIcon className={classes.forumIcon} />
-          </IconButton>
           <Drawer
             anchor="bottom"
             open={openBottombar}

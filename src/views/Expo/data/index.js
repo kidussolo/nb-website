@@ -50,7 +50,7 @@ export const process = [
         description: "Chose alerting options",
       },
       {
-        icon: "fa-magic",
+        icon: "fa fa-magic",
         description:
           "Choose from a wide range of existing templates or write your own templates to post the data automatically and immediately after it released"
       },

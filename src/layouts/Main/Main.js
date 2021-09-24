@@ -1,10 +1,8 @@
 import {
   AppBar,
-  Drawer, IconButton,
-  Toolbar, useMediaQuery
+  Drawer, Toolbar, useMediaQuery
 } from "@material-ui/core";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import ForumIcon from "@material-ui/icons/Forum";
 import clsx from "clsx";
 import { ContactForm } from "components/organisms";
 import PropTypes from "prop-types";
@@ -136,12 +134,6 @@ const Main = ({ children, themeToggler, themeMode }) => {
             onClose={handleBottombarClose}/>
       <AppBar position="fixed" className={classes.appBarBottom}>
         <Toolbar disableGutters className={classes.toolbarBottom}>
-          <IconButton
-            className={classes.chatIconButton}
-            onClick={handleBottombarOpen}
-          >
-            <ForumIcon className={classes.forumIcon} />
-          </IconButton>
           <Drawer
             anchor="bottom"
             open={openBottombar}

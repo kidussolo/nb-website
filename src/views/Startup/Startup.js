@@ -1,6 +1,5 @@
-import { AppBar, Divider, Drawer, IconButton, Toolbar } from "@material-ui/core";
+import { AppBar, Divider, Drawer, Toolbar } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import ForumIcon from "@material-ui/icons/Forum";
 import { ContactForm, Section } from "components/organisms";
 import React from "react";
 import { Hero, Partners, Reviews, Work } from "./components";
@@ -80,12 +79,6 @@ const Startup = () => {
       <Divider />
       <AppBar position="fixed" className={classes.appBarBottom}>
         <Toolbar disableGutters className={classes.toolbarBottom}>
-          <IconButton
-            className={classes.chatIconButton}
-            onClick={handleBottombarOpen}
-          >
-            <ForumIcon className={classes.forumIcon} />
-          </IconButton>
           <Drawer
             anchor="bottom"
             open={openBottombar}

@@ -1,6 +1,5 @@
-import { AppBar, Drawer, IconButton, Toolbar } from "@material-ui/core";
+import { AppBar, Drawer, Toolbar } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import ForumIcon from "@material-ui/icons/Forum";
 import { ContactForm, Section } from "components/organisms";
 import React from "react";
 import { Contact, Hero, Story, WhoWeAre } from "./components";
@@ -61,9 +60,6 @@ const About = () => {
   const classes = useStyles();
   const [openBottombar, setOpenBottombar] = React.useState(false);
 
-  const handleBottombarOpen = () => {
-    setOpenBottombar(true);
-  };
 
   const handleBottombarClose = () => {
     setOpenBottombar(false);
@@ -81,12 +77,6 @@ const About = () => {
       <Contact data={mapData} />
       <AppBar position="fixed" className={classes.appBarBottom}>
         <Toolbar disableGutters className={classes.toolbarBottom}>
-          <IconButton
-            className={classes.chatIconButton}
-            onClick={handleBottombarOpen}
-          >
-            <ForumIcon className={classes.forumIcon} />
-          </IconButton>
           <Drawer
             anchor="bottom"
             open={openBottombar}
