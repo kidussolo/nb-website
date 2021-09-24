@@ -48,6 +48,7 @@ const useStyles = makeStyles((theme) => ({
     "&.menu-item--no-dropdown": {
       paddingRight: 0,
     },
+    whiteSpace: "nowrap"
   },
   listItemActive: {
     "&> .menu-item": {
@@ -192,7 +193,7 @@ const Topbar = ({
             className={clsx(classes.listItem, "menu-item--no-dropdown")}
           >
             <Button component="a" href="/about">
-              AboutUs
+              About Us
             </Button>
           </ListItem>
           <ListItem
