@@ -64,10 +64,10 @@ const ContactForm = () => {
 
     emailjs
       .sendForm(
-        "service_psn1p8p",
-        "template_v3nkpx8",
+        "service_bdf5rg7",
+        "template_8o08gkh",
         form.current,
-        "user_GEaXtOuxjkKHayRk6M1oI"
+        "user_vftA7tPa0NWQpbKwvAUZm"
       )
       .then(
         (result) => {
