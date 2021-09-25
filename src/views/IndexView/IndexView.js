@@ -7,6 +7,9 @@ import Pricing from "views/Pricing";
 import { Founders } from "views/Service/components";
 import noUser from "../../assets/images/no-profile-picture.svg";
 import { Hero, Services } from "./components";
+import founderCTO from "../../assets/images/dagm.jpg";
+import founderCEO from "../../assets/images/ilya.jpeg";
+import teamMember from "../../assets/images/kidus.jpg";
 
 const useStyles = makeStyles((theme) => ({
   pagePaddingTop: {
@@ -56,9 +59,7 @@ export const founders = [
     title: "Co-Founder and CTO",
     authorPhoto: {
       src:
-        "https://assets.maccarianagency.com/the-front/photos/people/kate-segelson.jpg",
-      srcSet:
-        "https://assets.maccarianagency.com/the-front/photos/people/kate-segelson@2x.jpg 2x",
+        founderCTO,
     },
     authorName: "Dagm Fekadu",
   },
@@ -66,10 +67,7 @@ export const founders = [
     title: "Co-Founder and CEO",
 
     authorPhoto: {
-      src:
-        "https://assets.maccarianagency.com/the-front/photos/people/alex-johnson.jpg",
-      srcSet:
-        "https://assets.maccarianagency.com/the-front/photos/people/alex-johnson@2x.jpg 2x",
+      src: founderCEO,
     },
     authorName: "Ilya Dachekovisy",
   },
@@ -79,10 +77,7 @@ export const teams = [
   {
     title: "Software Engineer",
     authorPhoto: {
-      src:
-        "https://assets.maccarianagency.com/the-front/photos/people/kate-segelson.jpg",
-      srcSet:
-        "https://assets.maccarianagency.com/the-front/photos/people/kate-segelson@2x.jpg 2x",
+      src: teamMember,
     },
     authorName: "Kidus Solomon",
   },
@@ -90,8 +85,6 @@ export const teams = [
     title: "Can claim this spot",
     authorPhoto: {
       src: { noUser },
-      srcSet:
-        "https://assets.maccarianagency.com/the-front/photos/people/alex-johnson@2x.jpg 2x",
     },
     authorName: "You",
   },
