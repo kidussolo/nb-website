@@ -69,7 +69,7 @@ export const founders = [
     authorPhoto: {
       src: founderCEO,
     },
-    authorName: "Ilya Dachekovisy",
+    authorName: "Ilya Dashkovsky",
   },
 ];
 
