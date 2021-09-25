@@ -1,6 +1,6 @@
 /* eslint-disable react/no-multi-comp */
 /* eslint-disable react/display-name */
-import React from 'react';
+import React, { useState }from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
@@ -46,6 +46,11 @@ const Accordion = props => {
   } = props;
 
   const classes = useStyles();
+  const [expanded, setExpanded] = useState(false)
+
+  const handleChange = (panel) => (event, isExpanded) => {
+    setExpanded(isExpanded ? panel : false);
+  }
 
   return (
     <div {...rest} className={clsx('accordion', classes.root, className)}>
@@ -53,6 +58,8 @@ const Accordion = props => {
         <MuiAccordion
           className={clsx('accordion__item-wrapper', classes.listItem)}
           key={item.id}
+          onChange ={handleChange(item.id)}
+          expanded ={expanded === item.id}
         >
           <MuiAccordionSummary
             expandIcon={<ExpandMoreIcon />}
@@ -117,6 +124,7 @@ const Accordion = props => {
                   <LearnMoreLink
                     title={item.link}
                     variant="body1"
+                    href="/discover"
                     className="accordion__collapsable-link"
                     {...linkProps}
                   />
