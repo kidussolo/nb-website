@@ -96,12 +96,7 @@ const Footer = (props) => {
       text: "Facebook",
       href: "https://www.facebook.com/groups/1871903176457236",
       color: "buttonContainedFacebook",
-    },
-    {
-      icon: "fab fa-twitter",
-      text: "Twitter",
-      color: "buttonContainedTwitter",
-    },
+    } 
   ];
 
   const SocialMediaLink = () => {
