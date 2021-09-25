@@ -1,31 +1,41 @@
-import React, {useRef} from 'react';
-import { makeStyles, withStyles } from '@material-ui/core/styles';
-import { Typography, Grid, Button, TextField, CircularProgress } from '@material-ui/core';
-import validate from 'validate.js';
-import emailjs, { send } from 'emailjs-com';
+import React, { useRef } from "react";
+import { makeStyles, withStyles } from "@material-ui/core/styles";
+import {
+  Typography,
+  Grid,
+  Button,
+  TextField,
+  CircularProgress,
+} from "@material-ui/core";
+import validate from "validate.js";
+import emailjs from "emailjs-com";
+import { Alert } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
+import IconButton from "@mui/material/IconButton";
+import Collapse from "@mui/material/Collapse";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
-    width: '100%',
+    width: "100%",
   },
 }));
 
 const schema = {
   fullname: {
-    presence: { allowEmpty: false, message: 'is required' },
+    presence: { allowEmpty: false, message: "is required" },
     length: {
       maximum: 128,
     },
   },
   email: {
-    presence: { allowEmpty: false, message: 'is required' },
+    presence: { allowEmpty: false, message: "is required" },
     email: true,
     length: {
       maximum: 300,
     },
   },
   message: {
-    presence: { allowEmpty: false, message: 'is required' },
+    presence: { allowEmpty: false, message: "is required" },
   },
 };
 
@@ -39,62 +49,112 @@ const ContactForm = () => {
     values: {},
     touched: {},
     errors: {},
-    loading: false
+    loading: false,
+    success: false,
+    error: false,
   });
+  const [open, setOpen] = React.useState(true);
 
   const sendEmail = (e) => {
     e.preventDefault();
-    setFormState(formState => ({
+    setFormState((formState) => ({
       ...formState,
-      loading: true
+      loading: true,
     }));
 
-    emailjs.sendForm('service_psn1p8p', 'template_v3nkpx8', form.current, 'user_GEaXtOuxjkKHayRk6M1oI')
-      .then((result) => {
+    emailjs
+      .sendForm(
+        "service_psn1p8p",
+        "template_v3nkpx8",
+        form.current,
+        "user_GEaXtOuxjkKHayRk6M1oI"
+      )
+      .then(
+        (result) => {
           console.log(result.text);
-          setFormState(formState => ({
+
+          setFormState((formState) => ({
             ...formState,
-            loading: false
+            loading: false,
+            values: {},
+            touched: {},
+            errors: {},
+            success: true,
           }));
-      }, (error) => {
+        },
+        (error) => {
           console.log(error.text);
-      });
+          setFormState((formState) => ({
+            ...formState,
+            loading: false,
+            values: {},
+            touched: {},
+            errors: {},
+            error: true,
+          }));
+        }
+      );
   };
 
   const styles = {
     root: {
       marginLeft: 5,
-    }
-  }
+    },
+  };
 
-  const SpinnerAdornment = withStyles(styles)(props => (
-    <CircularProgress 
+  const AlertMessage = ({ severity, message }) => {
+    return (
+      <Collapse in={open}>
+        <Alert
+          severity={severity}
+          action={
+            <IconButton
+              aria-label="close"
+              color="inherit"
+              size="small"
+              onClick={() => {
+                setOpen(false);
+              }}
+            >
+              <CloseIcon fontSize="inherit" />
+            </IconButton>
+          }
+          sx={{ mb: 2 }}
+        >
+          {message}
+        </Alert>
+      </Collapse>
+    );
+  };
+
+  const Spinner = withStyles(styles)((props) => (
+    <CircularProgress
       className={props.classes.spinner}
       size={20}
       color="inherit"
-      marginRight={5}
+      style={{marginRight: 10}}
     />
-  ))
+  ));
 
   React.useEffect(() => {
     const errors = validate(formState.values, schema);
 
-    setFormState(formState => ({
+    setFormState((formState) => ({
       ...formState,
       isValid: errors ? false : true,
       errors: errors || {},
     }));
   }, [formState.values]);
 
-  const handleChange = event => {
+  const handleChange = (event) => {
     event.persist();
 
-    setFormState(formState => ({
+    setFormState((formState) => ({
       ...formState,
       values: {
         ...formState.values,
         [event.target.name]:
-          event.target.type === 'checkbox'
+          event.target.type === "checkbox"
             ? event.target.checked
             : event.target.value,
       },
@@ -105,16 +165,25 @@ const ContactForm = () => {
     }));
   };
 
-  const hasError = field =>
+  const hasError = (field) =>
     formState.touched[field] && formState.errors[field] ? true : false;
 
   return (
     <div className={classes.root}>
-      <form
-        name="contact-form"
-        ref={form}
-        onSubmit={sendEmail}
-      >
+      <form name="contact-form" ref={form} onSubmit={sendEmail}>
+        {formState.success ? (
+          <AlertMessage
+            severity="success"
+            message="Sent successfully, We'll get back to you real soon!"
+          />
+        ) : formState.error ? (
+          <AlertMessage
+            severity="error"
+            message="Something went wrong, try again"
+          />
+        ) : (
+          ""
+        )}
         <input type="hidden" name="form-name" value="contact-form" />
         <Grid container spacing={2}>
           <Grid item xs={12}>
@@ -134,12 +203,12 @@ const ContactForm = () => {
               name="fullname"
               fullWidth
               helperText={
-                hasError('fullname') ? formState.errors.fullname[0] : null
+                hasError("fullname") ? formState.errors.fullname[0] : null
               }
-              error={hasError('fullname')}
+              error={hasError("fullname")}
               onChange={handleChange}
               type="text"
-              value={formState.values.fullname || ''}
+              value={formState.values.fullname || ""}
             />
           </Grid>
           <Grid item xs={12} sm={6}>
@@ -150,11 +219,11 @@ const ContactForm = () => {
               size="medium"
               name="email"
               fullWidth
-              helperText={hasError('email') ? formState.errors.email[0] : null}
-              error={hasError('email')}
+              helperText={hasError("email") ? formState.errors.email[0] : null}
+              error={hasError("email")}
               onChange={handleChange}
               type="email"
-              value={formState.values.email || ''}
+              value={formState.values.email || ""}
             />
           </Grid>
           <Grid item xs={12}>
@@ -165,13 +234,13 @@ const ContactForm = () => {
               name="message"
               fullWidth
               helperText={
-                hasError('message') ? formState.errors.message[0] : null
+                hasError("message") ? formState.errors.message[0] : null
               }
-              error={hasError('message')}
+              error={hasError("message")}
               onChange={handleChange}
               multiline
               rows={4}
-              value={formState.values.message || ''}
+              value={formState.values.message || ""}
             />
           </Grid>
           <Grid item xs={12}>
@@ -185,7 +254,7 @@ const ContactForm = () => {
               color="primary"
               disabled={!formState.isValid}
             >
-               {formState.loading && <SpinnerAdornment /> } Send
+              {formState.loading && <Spinner />} Send
             </Button>
           </Grid>
         </Grid>
