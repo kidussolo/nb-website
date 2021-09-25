@@ -15,7 +15,12 @@
       "react-app"
     ]
   },
-  "browserslist": [">0.3%", "not ie 11", "not dead", "not op_mini all"],
+  "browserslist": [
+    ">0.3%",
+    "not ie 11",
+    "not dead",
+    "not op_mini all"
+  ],
   "dependencies": {
     "@material-ui/core": "^4.2.1",
     "@material-ui/icons": "^4.2.1",
@@ -24,6 +29,7 @@
     "@material-ui/styles": "^4.2.1",
     "aos": "^2.3.4",
     "clsx": "^1.0.4",
+    "emailjs-com": "^3.2.0",
     "history": "^4.9.0",
     "jarallax": "^1.12.1",
     "leaflet": "^1.6.0",

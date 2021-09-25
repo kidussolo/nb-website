@@ -1,7 +1,8 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import { Typography, Grid, Button, TextField } from '@material-ui/core';
+import React, {useRef} from 'react';
+import { makeStyles, withStyles } from '@material-ui/core/styles';
+import { Typography, Grid, Button, TextField, CircularProgress } from '@material-ui/core';
 import validate from 'validate.js';
+import emailjs, { send } from 'emailjs-com';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -31,12 +32,49 @@ const schema = {
 const ContactForm = () => {
   const classes = useStyles();
 
+  const form = useRef();
+
   const [formState, setFormState] = React.useState({
     isValid: false,
     values: {},
     touched: {},
     errors: {},
+    loading: false
   });
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setFormState(formState => ({
+      ...formState,
+      loading: true
+    }));
+
+    emailjs.sendForm('service_psn1p8p', 'template_v3nkpx8', form.current, 'user_GEaXtOuxjkKHayRk6M1oI')
+      .then((result) => {
+          console.log(result.text);
+          setFormState(formState => ({
+            ...formState,
+            loading: false
+          }));
+      }, (error) => {
+          console.log(error.text);
+      });
+  };
+
+  const styles = {
+    root: {
+      marginLeft: 5,
+    }
+  }
+
+  const SpinnerAdornment = withStyles(styles)(props => (
+    <CircularProgress 
+      className={props.classes.spinner}
+      size={20}
+      color="inherit"
+      marginRight={5}
+    />
+  ))
 
   React.useEffect(() => {
     const errors = validate(formState.values, schema);
@@ -74,8 +112,8 @@ const ContactForm = () => {
     <div className={classes.root}>
       <form
         name="contact-form"
-        method="post"
-        action="/submition.html?contact-form-submit-success=true"
+        ref={form}
+        onSubmit={sendEmail}
       >
         <input type="hidden" name="form-name" value="contact-form" />
         <Grid container spacing={2}>
@@ -147,7 +185,7 @@ const ContactForm = () => {
               color="primary"
               disabled={!formState.isValid}
             >
-              Send
+               {formState.loading && <SpinnerAdornment /> } Send
             </Button>
           </Grid>
         </Grid>
