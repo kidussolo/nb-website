@@ -5,17 +5,17 @@ import React from "react";
 import { Teams } from "views/About/components";
 import Pricing from "views/Pricing";
 import { Founders } from "views/Service/components";
-import noUser from "../../assets/images/no-profile-picture.svg";
-import { Hero, Services } from "./components";
 import founderCTO from "../../assets/images/dagm.jpg";
 import founderCEO from "../../assets/images/ilya.jpeg";
 import teamMember from "../../assets/images/kidus.jpg";
+import noUser from "../../assets/images/no-profile-picture.svg";
+import { Hero, Services } from "./components";
 
 const useStyles = makeStyles((theme) => ({
   pagePaddingTop: {
-    paddingTop: theme.spacing(3),
+    paddingTop: theme.spacing(12),
     [theme.breakpoints.up("md")]: {
-      paddingTop: theme.spacing(5),
+      paddingTop: theme.spacing(12),
     },
   },
   appBarBottom: {
@@ -28,24 +28,6 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     margin: "0 auto",
     padding: theme.spacing(0, 2),
-  },
-  chatIconButton: {
-    position: "absolute",
-    right: theme.spacing(3),
-    left: "auto",
-    top: theme.spacing(-3),
-    background: theme.palette.primary.main,
-    width: 55,
-    height: 55,
-    boxShadow: `0 2px 10px 0 ${theme.palette.cardShadow}`,
-    "&:hover": {
-      background: theme.palette.primary.main,
-    },
-  },
-  forumIcon: {
-    color: "white",
-    width: 25,
-    height: 25,
   },
   contactForm: {
     padding: theme.spacing(3, 2),
