@@ -70,8 +70,6 @@ const Hero = props => {
         >
           <Image
             src="https://pngimg.com/uploads/reporter/reporter_PNG22.png"
-            // src={landingImage}
-            // srcSet="https://assets.maccarianagency.com/the-front/photos/ecommerce/hero-cover@2x.png 2x"
             alt="Welcome"
             className={classes.image}
           />

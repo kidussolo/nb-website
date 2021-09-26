@@ -4,6 +4,7 @@ import clsx from "clsx";
 import { Image } from "components/atoms";
 import PropTypes from "prop-types";
 import React from "react";
+import gridSeparator from "utils";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -54,7 +55,7 @@ const Partners = (props) => {
           <Grid item xs={12}>
             <Grid container justify="space-between">
               {data.map((partner, index) => (
-                <Grid item xs={6} sm={2} key={index}>
+                <Grid item xs={gridSeparator(index, data.length, 2, 6)} sm={2} key={index}>
                   <Image
                     src={partner.logo}
                     alt={partner.name}

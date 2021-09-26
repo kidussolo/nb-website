@@ -4,6 +4,7 @@ import { useTheme, makeStyles } from "@material-ui/core/styles";
 import { useMediaQuery, Grid, Typography, colors } from "@material-ui/core";
 import { IconAlternate, SectionHeader } from "components/molecules";
 import { DescriptionListIcon, Section } from "components/organisms";
+import gridSeparator from "utils";
 
 const useStyles = makeStyles(() => ({
   fontWeight900: {
@@ -115,7 +116,13 @@ const Services = ({ className, ...rest }) => {
         />
         <Grid container spacing={isMd ? 4 : 2}>
           {data.map((item, index) => (
-            <Grid key={index} item xs={12} sm={4} data-aos={"fade-up"}>
+            <Grid
+              key={index}
+              item
+              xs={12}
+              sm={gridSeparator(index, data.length, 3, 4)}
+              data-aos={"fade-up"}
+            >
               <DescriptionListIcon
                 title={item.title}
                 icon={

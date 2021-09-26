@@ -1,16 +1,21 @@
 import tts from "../../../assets/images/product-tts.png"
+import agriexprt from "../../../assets/images/agriexpert.png"
+import agrily from "../../../assets/images/agrily.png"
+import milknews from "../../../assets/images/Milknews.jpg"
+import dashboard from "../../../assets/images/dashboard1.png"
+
 export const partners = [
   {
     name: 'Agriexpert',
-    logo: 'https://newsbrain.io/images/agriexpert.png'
+    logo: agriexprt
   },
   {
     name: 'Agrily',
-    logo: 'https://newsbrain.io/images/agrily.png',
+    logo: agrily,
   },
   {
     name: 'Milknews',
-    logo: 'https://newsbrain.io/images/Milknews.jpg',
+    logo: milknews,
   },
   
 ];
@@ -61,7 +66,7 @@ export const work = [
     title: 'Simple Customer Dashboards',
     description:
       'Give sub-users access to a simplified dashboard with limited permission levels to offer remote management and real-time analytics.',
-    illustration: 'https://firebasestorage.googleapis.com/v0/b/newsbrain-editor.appspot.com/o/Screen%20Shot%202021-09-19%20at%201.49.46%20PM.png?alt=media&token=af2dbcaa-fd1c-46e2-9448-7b4c33e655c8',
+    illustration: dashboard,
   },
 ];
 

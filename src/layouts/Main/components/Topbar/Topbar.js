@@ -14,7 +14,7 @@ import clsx from "clsx";
 import { Image } from "components/atoms";
 import PropTypes from "prop-types";
 import React from "react";
-import logo1 from "../../../../assets/images/logof.png";
+import logo from "../../../../assets/images/logo.png";
 
 const useStyles = makeStyles((theme) => ({
   flexGrow: {
@@ -148,7 +148,7 @@ const Topbar = ({
             <a href="/" title="newsbrain">
               <Image
                 className={classes.logoImage}
-                src={logo1}
+                src={logo}
                 alt="Newsbrain"
                 lazy={false}
               />
