@@ -52,9 +52,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Startup = () => {
-  const classes = useStyles()
-  
-  const [openBottombar, setOpenBottombar] = React.useState(false)
+  const classes = useStyles();
+
+  const [openBottombar, setOpenBottombar] = React.useState(false);
   const handleBottombarOpen = () => {
     setOpenBottombar(true);
   };
@@ -63,19 +63,27 @@ const Startup = () => {
     setOpenBottombar(false);
   };
 
-
   return (
     <div>
       <Hero />
       <Partners data={partners} />
       <Divider />
       <Section>
-        <Work data={work} open={handleBottombarOpen} onClose={handleBottombarClose} />
+        <Work
+          data={work}
+          open={handleBottombarOpen}
+          onClose={handleBottombarClose}
+        />
       </Section>
       <Divider />
-      <Section>
-        <Reviews data={reviews} />
-      </Section>
+      {/* Hidding review section for now */}
+      {false ? (
+        <Section>
+          <Reviews data={reviews} />
+        </Section>
+      ) : (
+        ""
+      )}
       <Divider />
       <AppBar position="fixed" className={classes.appBarBottom}>
         <Toolbar disableGutters className={classes.toolbarBottom}>
