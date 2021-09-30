@@ -72,7 +72,7 @@ export const teams = [
   },
 ];
 
-const IndexView = ({ themeMode }) => {
+const Landing = ({ themeMode }) => {
   const classes = useStyles();
 
   const [openBottombar, setOpenBottombar] = React.useState(false);
@@ -112,4 +112,4 @@ const IndexView = ({ themeMode }) => {
   );
 };
 
-export default IndexView;
+export default Landing;

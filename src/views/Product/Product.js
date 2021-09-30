@@ -51,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Startup = () => {
+const Product = () => {
   const classes = useStyles();
 
   const [openBottombar, setOpenBottombar] = React.useState(false);
@@ -102,4 +102,4 @@ const Startup = () => {
   );
 };
 
-export default Startup;
+export default Product;

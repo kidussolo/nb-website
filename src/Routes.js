@@ -4,11 +4,11 @@ import WithLayout from "WithLayout";
 import { Main as MainLayout } from "./layouts";
 import {
   About as AboutView,
-  Expo as ExpoView,
-  IndexView,
+  Discover as DiscoverView,
+  Landing,
   NotFoundCover as NotFoundCoverView,
   Service as ServiceView,
-  Startup as StartupView,
+  Product as ProductView,
 } from "./views";
 
 const Routes = () => {
@@ -20,7 +20,7 @@ const Routes = () => {
         render={(matchProps) => (
           <WithLayout
             {...matchProps}
-            component={IndexView}
+            component={Landing}
             layout={MainLayout}
           />
         )}
@@ -43,7 +43,7 @@ const Routes = () => {
         render={(matchProps) => (
           <WithLayout
             {...matchProps}
-            component={StartupView}
+            component={ProductView}
             layout={MainLayout}
           />
         )}
@@ -66,7 +66,7 @@ const Routes = () => {
         render={(matchProps) => (
           <WithLayout
             {...matchProps}
-            component={ExpoView}
+            component={DiscoverView}
             layout={MainLayout}
           />
         )}
