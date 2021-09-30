@@ -1,5 +1,14 @@
 {
   "projects": {
-    "default": "test-8c15f"
+    "default": "newsbrain-editor"
+  },
+  "targets": {
+    "newsbrain-editor": {
+      "hosting": {
+        "website": [
+          "newsbrain-website"
+        ]
+      }
+    }
   }
 }
