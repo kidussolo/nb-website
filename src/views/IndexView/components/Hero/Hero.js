@@ -4,11 +4,13 @@ import { Image } from 'components/atoms';
 import { SectionHeader, TypedText } from 'components/molecules';
 import PropTypes from 'prop-types';
 import React from 'react';
+import landing from "../../../../assets/images/landing.png";
 
 const useStyles = makeStyles(theme => ({
   
   image: {
     maxWidth: 600,
+    height: 100
   },
 }));
 
@@ -60,20 +62,21 @@ const Hero = props => {
             titleVariant="h3"
           />
         </Grid>
-        <Grid
+        {isMd ? <Grid
           item
           container
           justify="center"
+          alignItems="center"
           xs={12}
           md={6}
           data-aos={'fade-up'}
         >
           <Image
-            src="https://pngimg.com/uploads/reporter/reporter_PNG22.png"
+            src={landing}
             alt="Welcome"
             className={classes.image}
           />
-        </Grid>
+        </Grid> : ""}
       </Grid>
     </div>
   );
