@@ -6,7 +6,8 @@ import { Teams } from "views/About/components";
 import Pricing from "views/Pricing";
 import founderCTO from "../../assets/images/dagm.jpg";
 import founderCEO from "../../assets/images/ilya.jpeg";
-import teamMember from "../../assets/images/kidus.jpg";
+import teamMember1 from "../../assets/images/kidus.jpg";
+import teamMember2 from "../../assets/images/eden.jpg";
 import noUser from "../../assets/images/no-profile-picture.svg";
 import { Hero, Services, Founders } from "./components";
 
@@ -58,9 +59,16 @@ export const teams = [
   {
     title: "Software Engineer",
     authorPhoto: {
-      src: teamMember,
+      src: teamMember1,
     },
     authorName: "Kidus Solomon",
+  },
+  {
+    title: "ML Engineer",
+    authorPhoto: {
+      src: teamMember2,
+    },
+    authorName: "Eden Melaku",
   },
   {
     title: "Can claim this spot",
