@@ -18,6 +18,15 @@ export const partners = [
     logo: milknews,
   },
   
+  {
+    name: "Soufflet",
+    logo: "https://www.soufflet.com/themes/custom/gs_theme/images/logo/logo.svg"
+  },
+  {
+    name: "Kvedomosti",
+    logo: "https://kvedomosti.ru/wp-content/themes/kvedomosti/images/footer__logo.png"
+  },
+  
 ];
 
 
