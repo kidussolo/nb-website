@@ -9,8 +9,7 @@ import landing from "../../../../assets/images/landing.png";
 const useStyles = makeStyles(theme => ({
   
   image: {
-    maxWidth: 600,
-    height: 100
+    maxWidth: "100%",
   },
 }));
 
