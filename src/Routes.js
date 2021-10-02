@@ -7,7 +7,6 @@ import {
   Discover as DiscoverView,
   Landing,
   NotFoundCover as NotFoundCoverView,
-  Service as ServiceView,
   Product as ProductView,
 } from "./views";
 
@@ -26,17 +25,6 @@ const Routes = () => {
         )}
       />
 
-      <Route
-        exact
-        path="/service"
-        render={(matchProps) => (
-          <WithLayout
-            {...matchProps}
-            component={ServiceView}
-            layout={MainLayout}
-          />
-        )}
-      />
       <Route
         exact
         path="/product"

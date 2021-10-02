@@ -73,10 +73,6 @@ const Main = ({ children, themeToggler, themeMode }) => {
       href: "/about"
     },
     {
-      title: "Services",
-      href: "/services"
-    },
-    {
       title: "Product",
       href: "/product"
     },

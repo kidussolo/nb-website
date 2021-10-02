@@ -4,12 +4,11 @@ import { ContactForm, Section } from "components/organisms";
 import React from "react";
 import { Teams } from "views/About/components";
 import Pricing from "views/Pricing";
-import { Founders } from "views/Service/components";
 import founderCTO from "../../assets/images/dagm.jpg";
 import founderCEO from "../../assets/images/ilya.jpeg";
 import teamMember from "../../assets/images/kidus.jpg";
 import noUser from "../../assets/images/no-profile-picture.svg";
-import { Hero, Services } from "./components";
+import { Hero, Services, Founders } from "./components";
 
 const useStyles = makeStyles((theme) => ({
   pagePaddingTop: {

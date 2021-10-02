@@ -64,14 +64,6 @@ const SidebarNav = (props) => {
         <Divider className={classes.divider} />
       </ListItem>
       <ListItem className={classes.listItem}>
-        <Button component="a" href="/service">
-          Services
-        </Button>
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        <Divider className={classes.divider} />
-      </ListItem>
-      <ListItem className={classes.listItem}>
         <Button component="a" href="/product">
           Products
         </Button>

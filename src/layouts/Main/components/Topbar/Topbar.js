@@ -178,13 +178,6 @@ const Topbar = ({
           <ListItem
             className={clsx(classes.listItem, "menu-item--no-dropdown")}
           >
-            <Button component="a" href="/service">
-              Services
-            </Button>
-          </ListItem>
-          <ListItem
-            className={clsx(classes.listItem, "menu-item--no-dropdown")}
-          >
             <Button component="a" href="/product">
               Products
             </Button>
