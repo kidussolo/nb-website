@@ -48,7 +48,7 @@ const Work = props => {
                 titleVariant="h5"
                 title={item.title}
                 subtitle={item.description}
-                ctaGroup={[ <Button color="primary" variant="contained" size="large" onClick={() => open()}>
+                ctaGroup={[ <Button color="primary" variant="contained" size={isMd? "large":"small"} onClick={() => open()}>
                 Contact us
               </Button>,]}
                 align="left"
