@@ -42,7 +42,7 @@ const Process = (props) => {
                               color={colors.indigo}
                             />
                           }
-                          title={index + 1}
+                          title={item.title}
                           subtitle={item.description}
                           align="center"
                         />
