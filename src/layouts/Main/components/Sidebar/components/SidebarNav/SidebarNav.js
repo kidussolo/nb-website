@@ -79,6 +79,14 @@ const SidebarNav = (props) => {
           Discover
         </Button>
       </ListItem>
+      <ListItem className={classes.listItem}>
+        <Divider className={classes.divider} />
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <Button component="a" href="https://editor.newsbrain.io/login" className={classes.button}>
+          Sign in
+        </Button>
+      </ListItem>
     </List>
   );
 };
