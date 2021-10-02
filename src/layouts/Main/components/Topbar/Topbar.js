@@ -196,6 +196,17 @@ const Topbar = ({
               Discover
             </Button>
           </ListItem>
+          
+          <ListItem
+            className={clsx(classes.listItem, "menu-item--no-dropdown")}
+          >
+            <Button component="a" href="https://editor.newsbrain.io/login">
+              Signin
+            </Button>
+            {/* <Link rel="noopener noreferrer" href="https://editor.newsbrain.io/login" target="_blank">
+              Sign in
+          </Link> */}
+          </ListItem>
         </List>
       </Hidden>
       <Hidden mdUp>
