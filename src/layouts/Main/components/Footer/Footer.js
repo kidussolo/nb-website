@@ -58,6 +58,10 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
   },
+  button: {
+    textTransform: "none",
+    color: "white"
+  }
 }));
 
 const Footer = (props) => {
@@ -139,13 +143,13 @@ const Footer = (props) => {
   const BottomNav = () => {
     return (
       <div className={classes.bottomNav}>
-        <Button style={{ color: "white" }} onClick={() => open()}>
+        <Button className={classes.button} onClick={() => open()}>
           Contact Us
         </Button>
-        <Button style={{ color: "white" }} onClick={handleBottombarOpen}>
+        <Button className={classes.button} onClick={handleBottombarOpen}>
           FAQ
         </Button>
-        <Button component="a" style={{ color: "white" }} href="/about">
+        <Button component="a" className={classes.button} href="/about">
           About Us
         </Button>
       </div>

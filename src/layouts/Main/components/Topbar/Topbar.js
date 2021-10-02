@@ -128,6 +128,9 @@ const useStyles = makeStyles((theme) => ({
   menuGroupTitle: {
     textTransform: "uppercase",
   },
+  button: {
+    textTransform: "none"
+  }
 }));
 
 const Topbar = ({
@@ -171,28 +174,28 @@ const Topbar = ({
           <ListItem
             className={clsx(classes.listItem, "menu-item--no-dropdown")}
           >
-            <Button component="a" href="/">
+            <Button component="a" href="/" className={classes.button}>
               Home
             </Button>
           </ListItem>
           <ListItem
             className={clsx(classes.listItem, "menu-item--no-dropdown")}
           >
-            <Button component="a" href="/product">
+            <Button component="a" href="/product" className ={classes.button}>
               Products
             </Button>
           </ListItem>
           <ListItem
             className={clsx(classes.listItem, "menu-item--no-dropdown")}
           >
-            <Button component="a" href="/about">
+            <Button component="a" href="/about" className ={classes.button}>
               About Us
             </Button>
           </ListItem>
           <ListItem
             className={clsx(classes.listItem, "menu-item--no-dropdown")}
           >
-            <Button component="a" href="/discover">
+            <Button component="a" href="/discover" className ={classes.button}>
               Discover
             </Button>
           </ListItem>
@@ -200,17 +203,13 @@ const Topbar = ({
           <ListItem
             className={clsx(classes.listItem, "menu-item--no-dropdown")}
           >
-            <Button component="a" href="https://editor.newsbrain.io/login">
-              Signin
+            <Button component="a" href="https://editor.newsbrain.io/login" className ={classes.button}>
+              Sign In
             </Button>
-            {/* <Link rel="noopener noreferrer" href="https://editor.newsbrain.io/login" target="_blank">
-              Sign in
-          </Link> */}
           </ListItem>
         </List>
       </Hidden>
       <Hidden mdUp>
-        {/* <DarkModeToggler themeMode={themeMode} onClick={() => themeToggler()} /> */}
         <IconButton
           className={classes.iconButton}
           onClick={onSidebarOpen}

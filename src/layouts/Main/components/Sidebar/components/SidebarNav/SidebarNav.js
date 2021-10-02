@@ -34,6 +34,9 @@ const useStyles = makeStyles((theme) => ({
   divider: {
     width: "100%",
   },
+  button: {
+    textTransform: "none"
+  }
 }));
 
 const SidebarNav = (props) => {
@@ -48,7 +51,7 @@ const SidebarNav = (props) => {
         </ListItemIcon>
       </ListItem>
       <ListItem className={classes.listItem}>
-        <Button component="a" href="/">
+        <Button component="a" href="/" className={classes.button}>
           Home
         </Button>
       </ListItem>
@@ -56,7 +59,7 @@ const SidebarNav = (props) => {
         <Divider className={classes.divider} />
       </ListItem>
       <ListItem className={classes.listItem}>
-        <Button component="a" href="/about">
+        <Button component="a" href="/about" className={classes.button}>
           About Us
         </Button>
       </ListItem>
@@ -64,7 +67,7 @@ const SidebarNav = (props) => {
         <Divider className={classes.divider} />
       </ListItem>
       <ListItem className={classes.listItem}>
-        <Button component="a" href="/product">
+        <Button component="a" href="/product" className={classes.button}>
           Products
         </Button>
       </ListItem>
@@ -72,7 +75,7 @@ const SidebarNav = (props) => {
         <Divider className={classes.divider} />
       </ListItem>
       <ListItem className={classes.listItem}>
-        <Button component="a" href="/discover">
+        <Button component="a" href="/discover" className={classes.button}>
           Discover
         </Button>
       </ListItem>
